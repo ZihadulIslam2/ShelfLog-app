@@ -6,8 +6,7 @@ const Index = () => {
   return (
     <View>
       <Text>Index</Text>
-      <Link href="/about">about page</Link>
-    </View>
+l    </View>
   )
 }
 
