@@ -1,14 +1,14 @@
 import { Colors } from '@/constants/Colors'
 import React from 'react'
 import { useColorScheme, View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-const ThemedView = () => {
+const ThemedView = ({ style, ...props}) => {
   // check the system theme model
   const colorScheme = useColorScheme()
   const theme = Colors[colorScheme] ?? Colors.light
 
-  const insert = SafeAreaView()
+  const insert = useSafeAreaInsets()
   return (
     <View
       style={[

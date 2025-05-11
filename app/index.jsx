@@ -1,15 +1,26 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import React from 'react'
-import { Link } from 'expo-router'
+import ThemedView from '@/components/ThemedView'
 
 const Index = () => {
   return (
-    <View>
-      <Text>Index</Text>
-l    </View>
+    <ThemedView style={styles.container}>
+      <Text>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae libero
+        cum praesentium! Aliquam facilis voluptates nobis necessitatibus tempora
+        ratione eius culpa mollitia molestiae, laboriosam eveniet quaerat
+        repellat consectetur dignissimos adipisci?
+      </Text>
+    </ThemedView>
   )
 }
 
 export default Index
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+})
