@@ -3,10 +3,12 @@ import React from 'react'
 
 import ThemedView from '@/components/ThemedView'
 import ThemedText from '../components/ThemedText';
+import ThemedLogo from '../components/ThemedLogo';
 
 const Index = () => {
   return (
     <ThemedView style={styles.container}>
+      <ThemedLogo/>
       <ThemedText style={styles.text} >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae libero
         cum praesentium! Aliquam facilis voluptates nobis necessitatibus tempora
