@@ -1,16 +1,18 @@
-import { StyleSheet, Text } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
+
 import ThemedView from '@/components/ThemedView'
+import ThemedText from '../components/ThemedText';
 
 const Index = () => {
   return (
     <ThemedView style={styles.container}>
-      <Text>
+      <ThemedText style={styles.text} >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae libero
         cum praesentium! Aliquam facilis voluptates nobis necessitatibus tempora
         ratione eius culpa mollitia molestiae, laboriosam eveniet quaerat
         repellat consectetur dignissimos adipisci?
-      </Text>
+      </ThemedText>
     </ThemedView>
   )
 }
@@ -23,4 +25,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text: {
+    textAlign: 'center'
+  }
 })
