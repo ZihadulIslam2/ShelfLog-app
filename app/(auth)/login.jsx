@@ -37,14 +37,14 @@ const Login = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ThemedView style={styles.container}>
-        <Spacer />
+        <Space />
         <ThemedText title={true} style={styles.title}>
           Login to Your Account
         </ThemedText>
 
         {/* <TextInput placeholder="Email" /> */}
 
-        <Spacer />
+        <Space />
         <ThemedTextInput
           style={{ marginBottom: 20, width: '80%' }}
           placeholder="Email"
