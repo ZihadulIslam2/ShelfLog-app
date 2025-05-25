@@ -1,8 +1,8 @@
-import { useUser } from '../../hooks/useUser'
 import { useRouter } from 'expo-router'
 import { useEffect } from 'react'
+import { useUser } from '../../hooks/useUser'
 
-import ThemedLoader from '../ThemedLoading'
+import ThemedLoader from '../ThemedLoader'
 
 const GuestOnly = ({ children }) => {
   const { user, authChecked } = useUser()

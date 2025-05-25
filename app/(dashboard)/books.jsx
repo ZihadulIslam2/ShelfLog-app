@@ -7,10 +7,10 @@ import ThemedView from '../../components/ThemedView'
 const Books = () => {
   return (
     <ThemedView style={styles.container} safe={true}>
-    rue} style={styles.heading}>
+      <Spacer />
+      <ThemedText title={true} style={styles.heading}>
         Your Reading List
-      </ThemedText>  <Spacer />
-      <ThemedText title={t
+      </ThemedText>
     </ThemedView>
   )
 }
