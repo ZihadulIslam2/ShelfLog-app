@@ -1,36 +1,42 @@
 import { StyleSheet } from 'react-native'
-import React from 'react'
 import { Link } from 'expo-router'
 
+import ThemedView from '../components/ThemedView'
+import ThemedText from '../components/ThemedText'
+import ThemedLogo from '../components/ThemedLogo'
+import Spacer from '../components/Spacer'
+import { Colors } from '../constants/Colors'
 
-import ThemedView from '@/components/ThemedView'
-import ThemedText from '../components/ThemedText';
-import ThemedLogo from '../components/ThemedLogo';
-import Space from '../components/Space'
-
-const Index = () => {
+const Home = () => {
   return (
     <ThemedView style={styles.container}>
-      <ThemedLogo/>
-      <Space />
-      
-      <ThemedText style={styles.text} >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae libero
-        cum praesentium! Aliquam facilis voluptates nobis necessitatibus tempora
-        ratione eius culpa mollitia molestiae, laboriosam eveniet quaerat
-        repellat consectetur dignissimos adipisci?
+      <ThemedLogo />
+      <Spacer />
+
+      <ThemedText style={styles.title} title={true}>
+        The Number 1
       </ThemedText>
 
-      <Link href="/login">
-      <ThemedText>Login</ThemedText>
-      
+      <ThemedText style={{ marginTop: 10, marginBottom: 30 }}>
+        Reading List App
+      </ThemedText>
+
+      <Link href="/login" style={styles.link}>
+        <ThemedText>Login</ThemedText>
       </Link>
-      
+
+      <Link href="/register" style={styles.link}>
+        <ThemedText>Register</ThemedText>
+      </Link>
+
+      <Link href="/profile" style={styles.link}>
+        <ThemedText>Profile</ThemedText>
+      </Link>
     </ThemedView>
   )
 }
 
-export default Index
+export default Home
 
 const styles = StyleSheet.create({
   container: {
@@ -38,7 +44,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    textAlign: 'center'
-  }
+  img: {
+    marginVertical: 20,
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
+  link: {
+    marginVertical: 10,
+    borderBottomWidth: 1,
+  },
 })

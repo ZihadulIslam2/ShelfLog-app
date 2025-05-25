@@ -11,11 +11,10 @@ import { useUser } from '../../hooks/useUser'
 
 import ThemedView from '../../components/ThemedView'
 import ThemedText from '../../components/ThemedText'
+import Spacer from '../../components/Spacer'
 import ThemedButton from '../../components/ThemedButton'
 import ThemedTextInput from '../../components/ThemedTextInput'
 import { Colors } from '../../constants/Colors'
-import Space from '../../components/Space';
-
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -37,14 +36,14 @@ const Login = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ThemedView style={styles.container}>
-        <Space />
+        <Spacer />
         <ThemedText title={true} style={styles.title}>
           Login to Your Account
         </ThemedText>
 
         {/* <TextInput placeholder="Email" /> */}
 
-        <Space />
+        <Spacer />
         <ThemedTextInput
           style={{ marginBottom: 20, width: '80%' }}
           placeholder="Email"
@@ -80,6 +79,27 @@ const Login = () => {
     </TouchableWithoutFeedback>
   )
 }
+
 export default Login
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 18,
+    marginBottom: 30,
+  },
+  error: {
+    color: Colors.warning,
+    padding: 10,
+    backgroundColor: '#f5c1c8',
+    borderColor: Colors.warning,
+    borderWidth: 1,
+    borderRadius: 6,
+    marginHorizontal: 10,
+  },
+})

@@ -1,16 +1,13 @@
 import { createContext, useEffect, useState } from 'react'
-import { ID } from 'react-native-appwrite'
 import { account } from '../lib/appWrite'
+import { ID } from 'react-native-appwrite'
 
-// ✅ Create context
-export const UseContext = createContext()
+export const UserContext = createContext()
 
-// ✅ Accept children prop
 export function UserProvider({ children }) {
   const [user, setUser] = useState(null)
   const [authChecked, setAuthChecked] = useState(false)
 
-  // ✅ Login function
   async function login(email, password) {
     try {
       await account.createEmailPasswordSession(email, password)
@@ -21,13 +18,6 @@ export function UserProvider({ children }) {
     }
   }
 
-  // ✅ Logout function
-  async function logout() {
-    await account.deleteSession('current')
-    setUser(null)
-  }
-
-  // ✅ Register function
   async function register(email, password) {
     try {
       await account.create(ID.unique(), email, password)
@@ -37,7 +27,11 @@ export function UserProvider({ children }) {
     }
   }
 
-  // ✅ Check if a user is already logged in
+  async function logout() {
+    await account.deleteSession('current')
+    setUser(null)
+  }
+
   async function getInitialUserValue() {
     try {
       const res = await account.get()
@@ -53,9 +47,8 @@ export function UserProvider({ children }) {
     getInitialUserValue()
   }, [])
 
-  // ✅ Return context provider inside the component function
   return (
-    <UseContext.Provider
+    <UserContext.Provider
       value={{
         user,
         login,
@@ -65,6 +58,8 @@ export function UserProvider({ children }) {
       }}
     >
       {children}
-    </UseContext.Provider>
+    </UserContext.Provider>
   )
 }
+
+// Wrap the UserProvider component around the root layout stack
